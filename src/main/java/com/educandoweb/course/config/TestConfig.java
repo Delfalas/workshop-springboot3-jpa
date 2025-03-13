@@ -8,10 +8,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import com.educandoweb.course.entities.Category;
 import com.educandoweb.course.entities.Order;
+import com.educandoweb.course.entities.Product;
 import com.educandoweb.course.entities.User;
 import com.educandoweb.course.entities.enums.OrderStatus;
+import com.educandoweb.course.repositories.CategoryRepository;
 import com.educandoweb.course.repositories.OrderRepository;
+import com.educandoweb.course.repositories.ProductRepository;
 import com.educandoweb.course.repositories.UserRepository;
 
 @Configuration
@@ -24,8 +28,24 @@ public class TestConfig implements CommandLineRunner {
 	@Autowired
 	private OrderRepository orderRepository;
 	
+	@Autowired
+	private CategoryRepository categoryRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
+	
 	@Override
 	public void run(String... args) throws Exception {
+		
+		Category cat1 = new Category(null, "Electronics"); 
+		Category cat2 = new Category(null, "Books"); 
+		Category cat3 = new Category(null, "Computers");
+		
+		Product p1 = new Product(null, "The Lord of the Rings", "Livro clássico de fantasia medieval.", 90.5, ""); 
+		Product p2 = new Product(null, "Smart TV", "TV inteligente com várias funções.", 2190.0, ""); 
+		Product p3 = new Product(null, "Macbook Pro", "Computador da Apple de alta performance.", 1250.0, ""); 
+		Product p4 = new Product(null, "PC Gamer", "Computador perfeito para jogos eletrônicos.", 1200.0, ""); 
+		Product p5 = new Product(null, "Pequeno Príncipe", "Clássico da literatura infantil.", 100.99, "");
 		
 		User u1 = new User(null, "Vinicius Dantas", "vinidantas@hotmail.com", "983911989", "889907"); 
 		User u2 = new User(null, "Alex Green", "alex@gmail.com", "977777777", "123456");
@@ -34,7 +54,10 @@ public class TestConfig implements CommandLineRunner {
 		Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), OrderStatus.WAITING_PAYMENT ,u2);
 		Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.WAITING_PAYMENT ,u1);
 		
+		categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
 		userRepository.saveAll(Arrays.asList(u1, u2));
 		orderRepository.saveAll(Arrays.asList(o1, o2, o3));
+		productRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
+		
 	}
 }
