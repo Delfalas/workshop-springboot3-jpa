@@ -18,14 +18,20 @@ A aplicação consiste em um modelo de Web service, com programação orientada 
   
 
 ## Layout 
-![Layout 1](https://github.com/user-attachments/assets/b03389b7-a784-4e0c-91bf-2cc352644ed4) ![image](https://github.com/user-attachments/assets/c3fd4ee4-fc87-4681-9cf5-e5efad639971)
+![Layout 1](https://github.com/user-attachments/assets/b03389b7-a784-4e0c-91bf-2cc352644ed4) 
+
+![image](https://github.com/user-attachments/assets/c3fd4ee4-fc87-4681-9cf5-e5efad639971)
+
 
 
 
 
 ## Modelo conceitual
 ![Modelo Conceitual](https://github.com/user-attachments/assets/6f09fe0d-f208-48a9-8931-56568bd267d4)
+
 ![Modelo Conceitual](https://github.com/user-attachments/assets/3a15607f-4514-46b5-9c54-8ac43cf479ac)
+
+
 
 
 
@@ -55,14 +61,23 @@ git clone https://github.com/Delfalas/workshop-springboot3-jpa
 # executar o projeto
 ./mvnw spring-boot:run
 ```
+
+
 ## Como povoar o banco de dados
+
 No arquivo TestConfig.java
+
+
 ![image](https://github.com/user-attachments/assets/87fbc09c-39d3-468a-b1a1-d3614fe9f234)
 
 User insert no Postman:
+
+
 ![image](https://github.com/user-attachments/assets/c616af16-44ad-49aa-a1f0-ce38f06b3e4a)
 
 User update no Postman:
+
+
 ![image](https://github.com/user-attachments/assets/c728af74-f2e0-4608-861d-7c53f6a23046)
 
 
